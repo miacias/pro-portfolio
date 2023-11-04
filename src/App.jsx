@@ -97,7 +97,6 @@ function App() {
         className='menu-icon'
         onClick={toggleMenu}
       >☰</button>
-      {/* how many pixels to translate??? */}
       <div 
         className='fixed-container'
         style={{
