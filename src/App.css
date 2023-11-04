@@ -1,8 +1,58 @@
+/* 
+standard break points
+Mobile (smaller than 640px)
+Tablet (641px to 1024px)
+Desktop (1025px and larger)
+ */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  left: 2%;
+}
+
+.fixed-container {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  min-width: 400;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #888;
+  z-index: 1;
+  flex-direction: column;
+  background-image: url('../public/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
+  background-size: cover;
+  transition: transform 0.5s;
+}
+
+.fixed-header,
+.fixed-nav {
+  padding: 10px;
+}
+
+.nav-list {
+  list-style: none;
+
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  padding-top: 100px;
+  padding-left: 200px;
 }
 
 .logo {
