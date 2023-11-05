@@ -3,10 +3,7 @@ import './App.css'
 
 function App() {
   const [hideMenu, setHideMenu] = useState(false);
-  const [swipeWindow, setSwipeWindow] = useState({
-    startX: null,
-    endX: null,
-  });
+  const [endSwipe, setEndSwipe] = useState();
   const [matchesMobile, setMatchesMobile] = useState(
     window.matchMedia('(max-width: 1024px)').matches
   );
@@ -17,15 +14,12 @@ function App() {
   }
   
   // handles menu open/close event listeners
-  const handleSwipe = () => {
-    console.log('hideMenu', hideMenu)
-    console.log('swipeWindow', swipeWindow)
+  const handleSwipe = (endX) => {
     if (hideMenu) {
       return;
     }
-    if (swipeWindow.startX !== null && swipeWindow.endX !== null) {
-      const diff = swipeWindow.endX - swipeWindow.startX;
-      console.log('diff', diff)
+    if (endSwipe !== null && endX) {
+      const diff = endX - endSwipe;
       diff < 0 ? setHideMenu(true) : setHideMenu(false);
     }
   };
@@ -38,12 +32,6 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // // opens or closes menu
-  // useEffect(() => {
-  //   handleSwipe()
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [swipeWindow]);
-
   return (
     <div className='app-container'>
       <button
@@ -55,13 +43,25 @@ function App() {
       >☰</button>
       <div 
         className='fixed-container'
-        onMouseDown={(event) => setSwipeWindow({ ...swipeWindow, startX: event.screenX })}
+        onMouseDown={(event) => {
+          // setEndSwipe({ startX: null, endX: null });
+          // setEndSwipe((prevendSwipe) => {
+          //   return { ...prevendSwipe, startX: event.screenX } 
+          // })
+          setEndSwipe(event.screenX)
+          // let startX = event.screenX;
+          // return startX;
+          console.log('mouseDown finished', endSwipe)
+        }}
         onMouseUp={(event) => {
-          setSwipeWindow({ ...swipeWindow, endX: event.screenX })
-          handleSwipe();
-          // setSwipeWindow({ startX: null, endX: null });
-          }
-        }
+          // setEndSwipe((prevendSwipe) => { 
+          //   return { ...prevendSwipe, endX: event.screenX }
+          // })
+          let endX = event.screenX
+          console.log('RAW END SEND', endX)
+          handleSwipe(endX);
+          console.log('mouseUp finished', endSwipe)
+        }}
         style={{
           transform: `translateX(-${
             hideMenu ?
@@ -69,6 +69,7 @@ function App() {
               : 0
           }%)`,
           minWidth: matchesMobile ? '800px' : '22%',
+          userSelect: 'none',
         }}
       >
         {/* <img src='/sj-objio-XFWiZTa2Ub0-unsplash.jpg'/> */}
