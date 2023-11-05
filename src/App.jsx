@@ -16,15 +16,14 @@ function App() {
     setHideMenu(!hideMenu);
   }
 
-  // get start-end X axis values on mouse events
+  // gets start-end X axis values on mouse events
   const getStartX = (event) => {
-    let startX = event.screenX;
-    setSwipeWindow({ ...swipeWindow, startX });
+    setSwipeWindow({ ...swipeWindow, startX: event.screenX });
     return true;
   };
   const getEndX = (event) => {
-    let endX = event.screenX;
-    setSwipeWindow({ ...swipeWindow, endX });
+    setSwipeWindow({ ...swipeWindow, endX: event.screenX });
+    handleSwipe();
     return true;
   };
   
@@ -32,31 +31,34 @@ function App() {
   const handleSwipe = () => {
     if (hideMenu) {
       return;
-    } else {
+    } 
+    if (swipeWindow.startX !== null && swipeWindow.endX !== null) {
       const diff = swipeWindow.endX - swipeWindow.startX;
       diff < 0 ? setHideMenu(true) : setHideMenu(false);
     }
   };
 
-  // create event listeners on menu
+  // creates menu event listeners and media query event listener
   useEffect(() => {
+    window
+      .matchMedia('(max-width: 1024px)')
+      .addEventListener('change', event => setMatchesMobile(event.matches));
     const fixedContainer = document.querySelector('.fixed-container');
     fixedContainer.addEventListener('mousedown', getStartX);
     fixedContainer.addEventListener('mouseup', getEndX);
     fixedContainer.addEventListener('touchstart', getStartX);
     fixedContainer.addEventListener('touchend', getEndX);
+    return () => {
+      setSwipeWindow({ startX: null, endX: null });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // open or close menu
+  // opens or closes menu
   useEffect(() => {
     handleSwipe()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [swipeWindow]);
-
-  useEffect(() => {
-    window
-      .matchMedia('(max-width: 1024px)')
-      .addEventListener('change', event => setMatchesMobile(event.matches));
-  }, [])
 
   return (
     <div className='app-container'>
