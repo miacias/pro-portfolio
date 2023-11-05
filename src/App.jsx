@@ -66,7 +66,6 @@ function App() {
             : mouseDown ? 'grabbing' : 'grab'
         }}
       >
-        {/* <img src='/sj-objio-XFWiZTa2Ub0-unsplash.jpg'/> */}
         <header 
           className='fixed-header'
           style={{
@@ -76,7 +75,7 @@ function App() {
             transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
             transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
             width: hideMenu ? '12%' : '100%',
-            display: matchesMobile ? 'none' : 'block',
+            display: !hideMenu && matchesMobile ? 'none' : 'block',
           }}
         >
           <div className='self'>
