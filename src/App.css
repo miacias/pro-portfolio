@@ -29,7 +29,7 @@ Desktop (1025px and larger)
   background-color: #888;
   z-index: 1;
   flex-direction: column;
-  background-image: url('../public/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
+  background-image: url('/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
   background-size: cover;
   transition: transform 0.5s;
 }
