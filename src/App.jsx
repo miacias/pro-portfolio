@@ -15,50 +15,34 @@ function App() {
   const toggleMenu = () => {
     setHideMenu(!hideMenu);
   }
-
-  // gets start-end X axis values on mouse events
-  const getStartX = (event) => {
-    setSwipeWindow({ ...swipeWindow, startX: event.screenX });
-    return true;
-  };
-  const getEndX = (event) => {
-    setSwipeWindow({ ...swipeWindow, endX: event.screenX });
-    handleSwipe();
-    return true;
-  };
   
   // handles menu open/close event listeners
   const handleSwipe = () => {
+    console.log('hideMenu', hideMenu)
+    console.log('swipeWindow', swipeWindow)
     if (hideMenu) {
       return;
-    } 
+    }
     if (swipeWindow.startX !== null && swipeWindow.endX !== null) {
       const diff = swipeWindow.endX - swipeWindow.startX;
+      console.log('diff', diff)
       diff < 0 ? setHideMenu(true) : setHideMenu(false);
     }
   };
 
-  // creates menu event listeners and media query event listener
+  // // creates menu event listeners and media query event listener
   useEffect(() => {
     window
       .matchMedia('(max-width: 1024px)')
       .addEventListener('change', event => setMatchesMobile(event.matches));
-    const fixedContainer = document.querySelector('.fixed-container');
-    fixedContainer.addEventListener('mousedown', getStartX);
-    fixedContainer.addEventListener('mouseup', getEndX);
-    fixedContainer.addEventListener('touchstart', getStartX);
-    fixedContainer.addEventListener('touchend', getEndX);
-    return () => {
-      setSwipeWindow({ startX: null, endX: null });
-    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // opens or closes menu
-  useEffect(() => {
-    handleSwipe()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [swipeWindow]);
+  // // opens or closes menu
+  // useEffect(() => {
+  //   handleSwipe()
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [swipeWindow]);
 
   return (
     <div className='app-container'>
@@ -71,6 +55,13 @@ function App() {
       >☰</button>
       <div 
         className='fixed-container'
+        onMouseDown={(event) => setSwipeWindow({ ...swipeWindow, startX: event.screenX })}
+        onMouseUp={(event) => {
+          setSwipeWindow({ ...swipeWindow, endX: event.screenX })
+          handleSwipe();
+          // setSwipeWindow({ startX: null, endX: null });
+          }
+        }
         style={{
           transform: `translateX(-${
             hideMenu ?
@@ -80,6 +71,7 @@ function App() {
           minWidth: matchesMobile ? '800px' : '22%',
         }}
       >
+        {/* <img src='/sj-objio-XFWiZTa2Ub0-unsplash.jpg'/> */}
         <header 
           className='fixed-header'
           style={{
