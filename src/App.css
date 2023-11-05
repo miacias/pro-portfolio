@@ -12,6 +12,10 @@ Desktop (1025px and larger)
   text-align: center;
 }
 
+body {
+  font-family: 'Playpen Sans', sans-serif;
+}
+
 .menu-icon {
   position: absolute;
   top: 10px;
@@ -19,6 +23,8 @@ Desktop (1025px and larger)
 }
 
 .fixed-container {
+  font-family: 'Open-Dyslexic', sans-serif;
+  font-size: 1em;
   display: flex;
   position: fixed;
   width: 100%;

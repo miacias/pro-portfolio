@@ -76,6 +76,9 @@ function App() {
       </div>
       <main>
         {/* add page content here! */}
+        <div>
+          <p>this is text in the main section</p>
+        </div>
       </main>
     </div>
   )
