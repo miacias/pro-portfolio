@@ -64,7 +64,7 @@ function App() {
         className='menu-icon'
         onClick={toggleMenu}
         style={{
-          left: matchesMobile ? '2%' : '22%'
+          left: matchesMobile ? '3%' : '22%'
         }}
       >☰</button>
       <div 
@@ -75,18 +75,19 @@ function App() {
               matchesMobile ? 98 : 78
               : 0
           }%)`,
+          minWidth: matchesMobile ? '800px' : '22%',
         }}
       >
         <header 
           className='fixed-header'
           style={{
             position: hideMenu ? 'fixed' : '',
-            // left: hideMenu ? '82%' : '0%',
-            // transition: 'right 1s ease',
-            // new stuff
+            minWidth: '22%',
             left: hideMenu ? '100%' : '50%',
-            transform: hideMenu ? 'translateX(-172%)' : 'translateX(0%)',
-            transition: hideMenu ? 'transform 0.55s, left 0.55s' : ''
+            transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
+            transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
+            width: hideMenu ? '12%' : '100%',
+            display: matchesMobile ? 'none' : 'block',
           }}
         >
           <div className='self'>
