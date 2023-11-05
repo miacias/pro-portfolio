@@ -8,6 +8,12 @@ function App() {
     endX: null,
   });
 
+  // hamburger btn open/close menu
+  const toggleMenu = () => {
+    setHideMenu(!hideMenu);
+  }
+
+  // get start-end X axis values on mouse events
   const getStartX = (event) => {
     let startX = event.screenX;
     setSwipeWindow({ ...swipeWindow, startX });
@@ -19,6 +25,7 @@ function App() {
     return true;
   };
   
+  // handles menu open/close event listeners
   const handleSwipe = () => {
     if (hideMenu) {
       return;
@@ -28,23 +35,19 @@ function App() {
     }
   };
 
+  // create event listeners on menu
   useEffect(() => {
     const fixedContainer = document.querySelector('.fixed-container');
     fixedContainer.addEventListener('mousedown', getStartX);
     fixedContainer.addEventListener('mouseup', getEndX);
     fixedContainer.addEventListener('touchstart', getStartX);
     fixedContainer.addEventListener('touchend', getEndX);
-    // handleSwipe();
   }, []);
 
+  // open or close menu
   useEffect(() => {
     handleSwipe()
-  }, [swipeWindow])
-
-
-  const toggleMenu = () => {
-    setHideMenu(!hideMenu);
-  }
+  }, [swipeWindow]);
 
   return (
     <div className='app-container'>
