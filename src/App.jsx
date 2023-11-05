@@ -77,7 +77,18 @@ function App() {
           }%)`,
         }}
       >
-        <header className='fixed-header'>
+        <header 
+          className='fixed-header'
+          style={{
+            position: hideMenu ? 'fixed' : '',
+            // left: hideMenu ? '82%' : '0%',
+            // transition: 'right 1s ease',
+            // new stuff
+            left: hideMenu ? '100%' : '50%',
+            transform: hideMenu ? 'translateX(-172%)' : 'translateX(0%)',
+            transition: hideMenu ? 'transform 0.55s, left 0.55s' : ''
+          }}
+        >
           <div className='self'>
             <p>Mia Ciasullo</p>
             <p>Full Stack Developer</p>

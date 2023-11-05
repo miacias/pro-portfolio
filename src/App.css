@@ -19,7 +19,6 @@ body {
 .menu-icon {
   position: absolute;
   top: 10px;
-  /* left: 2%; */
 }
 
 .fixed-container {
@@ -27,8 +26,8 @@ body {
   font-size: 1em;
   display: flex;
   position: fixed;
+  /* position: relative; */
   width: 100%;
-  min-width: 400;
   height: 100vh;
   top: 0;
   left: 0;
@@ -43,11 +42,11 @@ body {
 .fixed-header,
 .fixed-nav {
   padding: 10px;
+  transition: left 0.5s;
 }
 
 .nav-list {
   list-style: none;
-
 }
 
 .app-container {
