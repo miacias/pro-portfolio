@@ -7,6 +7,9 @@ function App() {
     startX: null,
     endX: null,
   });
+  const [matchesMobile, setMatchesMobile] = useState(
+    window.matchMedia('(max-width: 1024px)').matches
+  );
 
   // hamburger btn open/close menu
   const toggleMenu = () => {
@@ -49,17 +52,44 @@ function App() {
     handleSwipe()
   }, [swipeWindow]);
 
+  useEffect(() => {
+    window
+      .matchMedia('(max-width: 1024px)')
+      .addEventListener('change', event => setMatchesMobile(event.matches));
+  }, [])
+
   return (
     <div className='app-container'>
       <button
         className='menu-icon'
         onClick={toggleMenu}
+        style={{
+          left: matchesMobile ? '3%' : '22%'
+        }}
       >☰</button>
       <div 
         className='fixed-container'
-        style={{ transform: `translateX(-${hideMenu ? 98 : 0}%)` }}
+        style={{
+          transform: `translateX(-${
+            hideMenu ?
+              matchesMobile ? 98 : 78
+              : 0
+          }%)`,
+          minWidth: matchesMobile ? '800px' : '22%',
+        }}
       >
-        <header className='fixed-header'>
+        <header 
+          className='fixed-header'
+          style={{
+            position: hideMenu ? 'fixed' : '',
+            minWidth: '22%',
+            left: hideMenu ? '100%' : '50%',
+            transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
+            transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
+            width: hideMenu ? '12%' : '100%',
+            display: matchesMobile ? 'none' : 'block',
+          }}
+        >
           <div className='self'>
             <p>Mia Ciasullo</p>
             <p>Full Stack Developer</p>
