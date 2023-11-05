@@ -3,7 +3,8 @@ import './App.css'
 
 function App() {
   const [hideMenu, setHideMenu] = useState(false);
-  const [endSwipe, setEndSwipe] = useState();
+  const [startSwipe, setStartSwipe] = useState();
+  const [mouseDown, setMouseDown] = useState(false);
   const [matchesMobile, setMatchesMobile] = useState(
     window.matchMedia('(max-width: 1024px)').matches
   );
@@ -14,22 +15,22 @@ function App() {
   }
   
   // handles menu open/close event listeners
-  const handleSwipe = (endX) => {
+  const handleSwipe = (endSwipe) => {
     if (hideMenu) {
       return;
     }
-    if (endSwipe !== null && endX) {
-      const diff = endX - endSwipe;
+    if (startSwipe && endSwipe) {
+      const diff = endSwipe - startSwipe;
       diff < 0 ? setHideMenu(true) : setHideMenu(false);
     }
+    setStartSwipe();
   };
 
-  // // creates menu event listeners and media query event listener
+  // creates media query event listener
   useEffect(() => {
     window
       .matchMedia('(max-width: 1024px)')
       .addEventListener('change', event => setMatchesMobile(event.matches));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -44,24 +45,15 @@ function App() {
       <div 
         className='fixed-container'
         onMouseDown={(event) => {
-          // setEndSwipe({ startX: null, endX: null });
-          // setEndSwipe((prevendSwipe) => {
-          //   return { ...prevendSwipe, startX: event.screenX } 
-          // })
-          setEndSwipe(event.screenX)
-          // let startX = event.screenX;
-          // return startX;
-          console.log('mouseDown finished', endSwipe)
+          setMouseDown(true);
+          setStartSwipe(event.screenX)
         }}
         onMouseUp={(event) => {
-          // setEndSwipe((prevendSwipe) => { 
-          //   return { ...prevendSwipe, endX: event.screenX }
-          // })
-          let endX = event.screenX
-          console.log('RAW END SEND', endX)
-          handleSwipe(endX);
-          console.log('mouseUp finished', endSwipe)
+          handleSwipe(event.screenX)
+          setMouseDown(false);
         }}
+        onTouchStart={(event) => setStartSwipe(event.changedTouches[0].screenX)}
+        onTouchEnd={(event) => handleSwipe(event.changedTouches[0].screenX) }
         style={{
           transform: `translateX(-${
             hideMenu ?
@@ -69,7 +61,9 @@ function App() {
               : 0
           }%)`,
           minWidth: matchesMobile ? '800px' : '22%',
-          userSelect: 'none',
+          cursor: hideMenu ?
+            'auto'
+            : mouseDown ? 'grabbing' : 'grab'
         }}
       >
         {/* <img src='/sj-objio-XFWiZTa2Ub0-unsplash.jpg'/> */}
