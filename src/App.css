@@ -37,6 +37,8 @@ body {
   background-image: url('/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
   background-size: cover;
   transition: transform 0.5s;
+  /* new stuff */
+  justify-content: center;
 }
 
 .fixed-header,

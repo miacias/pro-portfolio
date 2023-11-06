@@ -61,6 +61,7 @@ function App() {
               : 0
           }%)`,
           minWidth: matchesMobile ? '800px' : '22%',
+          maxWidth: '100%',
           cursor: hideMenu ?
             'auto'
             : mouseDown ? 'grabbing' : 'grab'
@@ -71,11 +72,14 @@ function App() {
           style={{
             position: hideMenu ? 'fixed' : '',
             minWidth: '22%',
-            left: hideMenu ? '100%' : '50%',
-            transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
-            transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
-            width: hideMenu ? '12%' : '100%',
-            display: !hideMenu && matchesMobile ? 'none' : 'block',
+            // left: hideMenu ? '100%' : '50%',
+            // transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
+            // transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
+            // width: hideMenu ? '12%' : '100%',
+            left: hideMenu ? '50%' : '0%',
+            transform: hideMenu ? 'translateX(-50%)' : 'translateX(0%)',
+            width: hideMenu ? '100%' : '22%',
+            display: hideMenu && matchesMobile ? 'none' : 'block',
           }}
         >
           <div className='self'>
