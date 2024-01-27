@@ -42,7 +42,13 @@ function App() {
           left: matchesMobile ? '3%' : '22%'
         }}
       >☰</button>
-      <div 
+      <div className='fixed-container'>
+        <img 
+          src='./sj-objio-XFWiZTa2Ub0-unsplash.jpg'
+          className='image-cropped-transform'
+        />
+      </div>
+      {/* <div 
         className='fixed-container'
         onMouseDown={(event) => {
           setMouseDown(true);
@@ -95,7 +101,7 @@ function App() {
             </ul>
           </nav>
         </header>
-      </div>
+      </div> */}
       <main>
         {/* add page content here! */}
         <div>

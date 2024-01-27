@@ -22,7 +22,7 @@ body {
   top: 10px;
 }
 
-.fixed-container {
+/* .fixed-container {
   font-family: 'Open-Dyslexic', sans-serif;
   font-size: 1em;
   display: flex;
@@ -37,8 +37,17 @@ body {
   background-image: url('/sj-objio-XFWiZTa2Ub0-unsplash.jpg');
   background-size: cover;
   transition: transform 0.5s;
-  /* new stuff */
   justify-content: center;
+} */
+
+.image-cropped-transform {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 55%;
+  transform: scale(0.5) translate(0, 5%);
 }
 
 .fixed-header,
