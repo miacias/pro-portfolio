@@ -159,3 +159,20 @@ main {
   border-radius: 190% 10% 10% 190%;
   border: none;
 } */
+
+#download-resume a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d7c7f9;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#download-resume a:hover {
+  background-color: #31254a;
+  color: white;
+}
