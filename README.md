@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 ## Credits
 
 - [Nav](https://alvarotrigo.com/blog/hamburger-menu-css/) - creating a hamburger menu
+- [Contact form](https://codepen.io/bobbykorec/pen/qOGbyr) - CSS layout

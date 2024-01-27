@@ -1,14 +1,38 @@
 // import { useEffect, useState } from 'react';
 import { useState } from 'react';
+// import { SMTPClient } from 'emailjs';
 import './App.css';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
   const [menuOpen, setMenuOpen] = useState(false);
+  // const [contactData, setContactData] = useState({});
 
   const menuClick = () => {
     setMenuOpen(!menuOpen);
   };
+
+  // const client = new SMTPClient({
+  //   user: 'user',
+  //   password: 'password',
+  //   host: 'smtp.your-email.com',
+  //   ssl: true,
+  // });
+
+  // const contactFormChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setContactData({ ...contactData, [name]: value });
+  // };
+
+  // const contactFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await client.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
+  //     if (response.status === 200) alert('Thank you for your message! I will get back to you shortly.');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
     <div className='app-container'>
@@ -53,14 +77,61 @@ function App() {
               </a>
             </p>
           </div>
-          <iframe 
-            className='resume-embed'
-            src="https://docs.google.com/document/d/e/2PACX-1vRZKTDkEFMaIs47oLeMRDUVZU1jaWY_oTowjqWj4hVip4r2nn3UkI5z8vUAX6Ow6EUTMyHfDNz7U8yB/pub?embedded=true" 
-            width='850' 
-            height='400' 
-            title='Mia Ciasullo resume'>Loading Resume…</iframe>
+          <div id='iframe-container'>
+            <iframe 
+              className='resume-embed'
+              src="https://docs.google.com/document/d/e/2PACX-1vRZKTDkEFMaIs47oLeMRDUVZU1jaWY_oTowjqWj4hVip4r2nn3UkI5z8vUAX6Ow6EUTMyHfDNz7U8yB/pub?embedded=true" 
+              width='850' 
+              height='500' 
+              title='Mia Ciasullo resume'>Loading Resume…
+            </iframe>
+          </div>
         </section>
-        <section id='contact'></section>
+        <section id='contact'>
+          <h3>Contact</h3>
+          <div className='contact-container'>
+            <form id='contact-form' 
+              // onSubmit={contactFormSubmit} 
+              // onChange={contactFormChange}
+            >
+              <div id='contact-name'>
+                <input className='user-input' placeholder='NAME'/>
+              </div>
+              <div id='contact-email'>
+                <input className='user-input' placeholder='EMAIL'/>
+              </div>
+              <div id='contact-msg'>
+                <textarea className='user-input' placeholder='MESSAGE'/>
+              </div>
+              <button type='submit'>Send</button>
+            </form>
+            <div id='direct-contact'>
+              <ul id='contact-list'>
+                <li className='contact-text location'><i className="fa-solid fa-location-dot"></i><span>USA</span></li>
+                <li className='contact-text phone'><i className="fa-solid fa-phone-flip"></i>
+                  <span><a href='tel:1-215-779-8590' title='call me'>{`(215) 779-8590`}</a></span>
+                </li>
+                <li className='contact-text email'><i className="fa-solid fa-envelope"></i>
+                  <span><a href='mailto:#' title='email me'>miaciasullo@gmail.com</a></span>
+                </li>
+              </ul>
+              <hr/>
+              <ul id='social-media'>
+                <li id='github'>
+                  <a href='https://www.github.com/miacias' target='_blank' rel='noreferrer'>
+                    <i className="fa-brands fa-github fa-2xl" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li id='linkedin'>
+                  <a href='https://www.linkedin.com/in/miaciasullo/' target='_blank' rel='noreferrer'>
+                    <i className="fa-brands fa-linkedin fa-2xl" aria-hidden="true"></i>
+                  </a>
+                </li>
+                {/* <li id='leetcode'><a href='#' target='_blank'>LeetCode icon here</a></li> */}
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
     </div>)}
 
