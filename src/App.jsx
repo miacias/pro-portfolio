@@ -1,105 +1,67 @@
-import { useEffect, useState } from 'react';
-import './App.css'
+// import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [hideMenu, setHideMenu] = useState(false);
-  const [startSwipe, setStartSwipe] = useState();
-  const [mouseDown, setMouseDown] = useState(false);
-  const [matchesMobile, setMatchesMobile] = useState(
-    window.matchMedia('(max-width: 1024px)').matches
-  );
+  const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // hamburger btn open/close menu
-  const toggleMenu = () => {
-    setHideMenu(!hideMenu);
-  }
-  
-  // handles menu open/close event listeners
-  const handleSwipe = (endSwipe) => {
-    if (hideMenu) {
-      return;
-    }
-    if (startSwipe && endSwipe) {
-      const diff = endSwipe - startSwipe;
-      diff < 0 ? setHideMenu(true) : setHideMenu(false);
-    }
-    setStartSwipe();
+  const menuClick = () => {
+    setMenuOpen(!menuOpen);
   };
-
-  // creates media query event listener
-  useEffect(() => {
-    window
-      .matchMedia('(max-width: 1024px)')
-      .addEventListener('change', event => setMatchesMobile(event.matches));
-  }, []);
 
   return (
     <div className='app-container'>
-      <button
-        className='menu-icon'
-        onClick={toggleMenu}
-        style={{
-          left: matchesMobile ? '3%' : '22%'
-        }}
-      >☰</button>
-      <div 
-        className='fixed-container'
-        onMouseDown={(event) => {
-          setMouseDown(true);
-          setStartSwipe(event.screenX)
-        }}
-        onMouseUp={(event) => {
-          handleSwipe(event.screenX)
-          setMouseDown(false);
-        }}
-        onTouchStart={(event) => setStartSwipe(event.changedTouches[0].screenX)}
-        onTouchEnd={(event) => handleSwipe(event.changedTouches[0].screenX) }
-        style={{
-          transform: `translateX(-${
-            hideMenu ?
-              matchesMobile ? 98 : 78
-              : 0
-          }%)`,
-          minWidth: matchesMobile ? '800px' : '22%',
-          cursor: hideMenu ?
-            'auto'
-            : mouseDown ? 'grabbing' : 'grab'
-        }}
-      >
-        <header 
-          className='fixed-header'
-          style={{
-            position: hideMenu ? 'fixed' : '',
-            minWidth: '22%',
-            left: hideMenu ? '100%' : '50%',
-            transform: hideMenu ? 'translateX(-100%)' : 'translateX(0%)',
-            transition: hideMenu ? 'transform 0.7s, left 0,7s' : '',
-            width: hideMenu ? '12%' : '100%',
-            display: !hideMenu && matchesMobile ? 'none' : 'block',
-          }}
-        >
-          <div className='self'>
-            <p>Mia Ciasullo</p>
-            <p>Full Stack Developer</p>
+      <header>
+        <div id='menu'>
+          <div id='menu-bars' className={menuOpen ? 'change' : ''} onClick={menuClick}>
+            <div id='bar-1' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
+            <div id='bar-2' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
+            <div id='bar-3' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
           </div>
-          <nav className='fixed-nav'>
-            <ul className='nav-list'>
-              <li>About Me</li>
-              <li>Portfolio</li>
-              <li>Skills</li>
-              <li>Contact</li>
+          <nav id='nav' className={menuOpen ? 'change' : ''}>
+            <ul style={{ display: menuOpen ? 'block' : 'none' }}>
+              {navOptions.map((item) => {
+                return <li key={item.split(' ').join('-')}><a href={`/${item.split(' ').join('-').toLowerCase()}`}>{item}</a></li>;
+              })}
             </ul>
           </nav>
-        </header>
-      </div>
-      <main>
-        {/* add page content here! */}
-        <div>
-          <p>this is text in the main section</p>
         </div>
+        <div className={`menu-bg ${menuOpen ? 'change-bg' : ''}`}></div>
+        <div className='self'>
+          <h1>Mia Ciasullo</h1>
+          <p>Full Stack Developer</p>
+        </div>
+      </header>
+      <main>
+        <section id='about-me'>
+          <h2>About Me</h2>
+          <div className='my-info'>
+            <p>I am a former French teacher and linguist turned full-stack developer! As someone who has always been drawn to creative and artistic outlets, I have found programming to be the perfect avenue for my unique perspective and problem-solving skills. My journey into the world of tech began when I discovered my passion for designing and building projects for my students. The more I learned, the more fascinated I became with the endless possibilities of coding. </p>
+            <p>From crafting intuitive user interfaces to optimizing backend functionality, I relish the opportunity to build innovative and efficient solutions. Coming from the education world, I bring a collaborative approach to my work, always striving to understand the needs and goals of my clients and team members. Whether I&apos;m building a custom web application or optimizing existing code, I am committed to delivering quality results that exceed expectations.</p>
+            <p>Thank you for taking the time to learn more about me and my work. Please feel free to browse my portfolio and contact me if you have any questions or if you&apos;re interested in working together!</p>
+          </div>
+        </section>
+        <section id='portfolio'></section>
+        <section id='skills'>
+          <h3>Resume</h3>
+          <div>
+            <p>I invite you to learn more about my experience and skills!</p>
+            <p id='download-resume'>
+              <a href="https://docs.google.com/document/export?format=txt&id=1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw">
+              Download my resume!
+              </a>
+            </p>
+          </div>
+          <iframe 
+            className='resume-embed'
+            src="https://docs.google.com/document/d/e/2PACX-1vRZKTDkEFMaIs47oLeMRDUVZU1jaWY_oTowjqWj4hVip4r2nn3UkI5z8vUAX6Ow6EUTMyHfDNz7U8yB/pub?embedded=true" 
+            width='850' 
+            height='400' 
+            title='Mia Ciasullo resume'>Loading Resume…</iframe>
+        </section>
+        <section id='contact'></section>
       </main>
-    </div>
-  )
-}
+    </div>)}
 
 export default App
