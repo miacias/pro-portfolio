@@ -1,4 +1,11 @@
 :root {
+  /* pastel sapphire */
+  --highlight: #d7c7f9;
+  /* dark purple */
+  --select: #31254a;
+  /* mid lilac */
+  --background: #67548c;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -85,7 +92,7 @@ body {
   width: 0;
   height: 0;
   margin: 30px 0 20px 20px;
-  background: radial-gradient(circle, #d7c7f9, #d7c7f9);
+  background: radial-gradient(circle, var(--highlight), var(--highlight));
   border-radius: 50%;
   transition: 0.3s ease;
 }
@@ -128,6 +135,8 @@ body {
   transform: translate(-60%, -30%);
 }
 
+/* MAIN PAGE */
+
 main {
   width: 100vh;
   margin: auto;
@@ -139,12 +148,22 @@ main {
   flex-direction: column;
 }
 
+/* HEADERS */
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
 /* ABOUT ME */
 
 #about-me {
   text-align: left;
 }
-
 
 /* RESUME */
 
@@ -157,7 +176,6 @@ main {
 .resume-embed {
   width: 100%;
   /* height: calc(100vh - 250px); */
-  /* border-radius: 190% 10% 10% 190%; */
   border-radius: 10%;
   border: none;
 }
@@ -170,7 +188,7 @@ main {
 button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #d7c7f9;
+  background-color: var(--highlight);
   color: black;
   text-decoration: none;
   border-radius: 5px;
@@ -181,9 +199,11 @@ button {
 
 #download-resume a:hover,
 button:hover {
-  background-color: #31254a;
+  background-color: var(--select);
   color: white;
 }
+
+/* CONTACT */
 
 #contact {
   width: 100%;
@@ -200,18 +220,56 @@ button:hover {
   max-width: 840px;
 }
 
+/* send email */
+
+#contact-form {
+  max-width: 400px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  width: calc(45% - 20px);
+}
+
 .user-input {
   max-width: 400px;
   font-weight: 400;
-  background-color: #31254a;
+  background-color: var(--select);
   color: white;
   letter-spacing: 1px;
+  border-radius: 4px;
+  border: #fff;
+  padding: 1em;
+  margin: 0 0 0.5em 0;
+}
+
+/* my contact info */
+
+#direct-contact {
+  max-width: 400px;
+  width: calc(45% - 20px);
+}
+
+#direct-contact li {
+  line-height: 2.5;
 }
 
 #contact-list {
   list-style-type: none;
   margin-left: -30px;
   padding-right: 20px;
+  text-align: start;
+}
+
+.location {
+  margin-left: 44px;
+}
+
+.phone {
+  margin-left: 40px;
+}
+
+.email {
+  margin-left: 42px;
 }
 
 .contact-text {
@@ -228,6 +286,8 @@ button:hover {
   color: chartreuse;
 }
 
+/* my socials */
+
 #social-media {
   position: relative;
   font-size: 22px;
@@ -238,7 +298,7 @@ button:hover {
 }
 
 #social-media li a {
-  color: #d7c7f9;
+  color: var(--select);
 }
 
 #social-media li {
@@ -249,8 +309,8 @@ button:hover {
   margin: 10px 3px;
   line-height: 60px;
   border-radius: 50%;
-  color: #d7c7f9;
-  background-color: #31254a;
+  color: var(--highlight);
+  background-color: var(--highlight);
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
@@ -269,7 +329,7 @@ button:hover {
 }
 
 #social-media li:hover {
-  background-color: #d7c7f9;
+  background-color: var(--select);
 }
 
 #social-media li:hover:after {
@@ -279,5 +339,17 @@ button:hover {
 }
 
 #social-media li:hover a {
-  color: #31254a;
+  color: var(--highlight);
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  #contact-form,
+  #direct-contact {
+    width: 100%;
+    align-self: center;
+  }
 }

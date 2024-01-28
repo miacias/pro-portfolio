@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [contactData, setContactData] = useState({});
+  const [contactData, setContactData] = useState({});
 
   const menuClick = () => {
     setMenuOpen(!menuOpen);
@@ -19,20 +19,21 @@ function App() {
   //   ssl: true,
   // });
 
-  // const contactFormChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setContactData({ ...contactData, [name]: value });
-  // };
+  const contactFormChange = (e) => {
+    const { name, value } = e.target;
+    setContactData({ ...contactData, [name]: value });
+  };
 
-  // const contactFormSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await client.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
-  //     if (response.status === 200) alert('Thank you for your message! I will get back to you shortly.');
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  const contactFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log('hi')
+      // const response = await client.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
+      // if (response.status === 200) alert('Thank you for your message! I will get back to you shortly.');
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className='app-container'>
@@ -59,7 +60,7 @@ function App() {
       </header>
       <main>
         <section id='about-me'>
-          <h2>About Me</h2>
+          <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
             <p>I am a former French teacher and linguist turned full-stack developer! As someone who has always been drawn to creative and artistic outlets, I have found programming to be the perfect avenue for my unique perspective and problem-solving skills. My journey into the world of tech began when I discovered my passion for designing and building projects for my students. The more I learned, the more fascinated I became with the endless possibilities of coding. </p>
             <p>From crafting intuitive user interfaces to optimizing backend functionality, I relish the opportunity to build innovative and efficient solutions. Coming from the education world, I bring a collaborative approach to my work, always striving to understand the needs and goals of my clients and team members. Whether I&apos;m building a custom web application or optimizing existing code, I am committed to delivering quality results that exceed expectations.</p>
@@ -68,7 +69,7 @@ function App() {
         </section>
         <section id='portfolio'></section>
         <section id='skills'>
-          <h3>Resume</h3>
+          <h2 className='section-header'>Resume</h2>
           <div>
             <p>I invite you to learn more about my experience and skills!</p>
             <p id='download-resume'>
@@ -88,31 +89,51 @@ function App() {
           </div>
         </section>
         <section id='contact'>
-          <h3>Contact</h3>
+          <h2 className='section-header'>Contact</h2>
           <div className='contact-container'>
-            <form id='contact-form' 
-              // onSubmit={contactFormSubmit} 
-              // onChange={contactFormChange}
+            <form id='contact-form' role='form'
+              onSubmit={contactFormSubmit} 
+              onChange={contactFormChange}
             >
-              <div id='contact-name'>
-                <input className='user-input' placeholder='NAME'/>
-              </div>
-              <div id='contact-email'>
-                <input className='user-input' placeholder='EMAIL'/>
-              </div>
-              <div id='contact-msg'>
-                <textarea className='user-input' placeholder='MESSAGE'/>
-              </div>
+              <input 
+                id='contact-name'
+                className='user-input'
+                name='name'
+                defaultValue=''
+                required={true}
+                placeholder='NAME'
+              />
+              <input
+                id='contact-email'
+                className='user-input'
+                name='email'
+                defaultValue=''
+                required={true}
+                placeholder='EMAIL'
+              />
+              <textarea
+                id='contact-msg'
+                className='user-input'
+                name='message'
+                defaultValue=''
+                required={true}
+                placeholder='MESSAGE'
+              />
               <button type='submit'>Send</button>
             </form>
             <div id='direct-contact'>
               <ul id='contact-list'>
-                <li className='contact-text location'><i className="fa-solid fa-location-dot"></i><span>USA</span></li>
-                <li className='contact-text phone'><i className="fa-solid fa-phone-flip"></i>
-                  <span><a href='tel:1-215-779-8590' title='call me'>{`(215) 779-8590`}</a></span>
+                <li>
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span className='contact-text location'>United States</span>
                 </li>
-                <li className='contact-text email'><i className="fa-solid fa-envelope"></i>
-                  <span><a href='mailto:#' title='email me'>miaciasullo@gmail.com</a></span>
+                <li>
+                  <i className="fa-solid fa-phone-flip"></i>
+                  <span className='contact-text phone'><a href='tel:1-215-779-8590' title='call me'>{`(215) 779-8590`}</a></span>
+                </li>
+                <li>
+                  <i className="fa-solid fa-envelope"></i>
+                  <span className='contact-text email'><a href='mailto:miaciasullo@gmail.com' title='email me'>miaciasullo@gmail.com</a></span>
                 </li>
               </ul>
               <hr/>
@@ -129,6 +150,8 @@ function App() {
                 </li>
                 {/* <li id='leetcode'><a href='#' target='_blank'>LeetCode icon here</a></li> */}
               </ul>
+              <hr/>
+              <p>Thank You!</p>
             </div>
           </div>
         </section>
