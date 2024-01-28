@@ -7,6 +7,11 @@
   /* mid lilac */
   --background: #67548c;
   --header: #FFFADE;
+  --project: #FF9475;
+  --project-accent: #AB6095;
+  --project-button: #E4728A;
+  /* --project-button-select: #FFC465; */
+  --project-button-select: #F9F871;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -158,13 +163,142 @@ main {
   padding: 40px 0;
   color: var(--header);
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 0.2em;
 }
 
 /* ABOUT ME */
 
 #about-me {
   text-align: left;
+}
+
+/* PORTFOLIO */
+
+.project-card {
+  background: linear-gradient(270deg, #ff9475, #ffc465, #e4728a);
+  background-size: 600% 600%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 2em;
+
+  -webkit-animation: projectcard 30s ease infinite;
+  -moz-animation: projectcard 30s ease infinite;
+  animation: projectcard 30s ease infinite;
+
+  -webkit-box-shadow: 10px 10px 33px -12px var(--select);
+  -moz-box-shadow: 10px 10px 33px -12px var(--select);
+  box-shadow: 10px 10px 33px -12px var(--select);
+}
+
+@-webkit-keyframes projectcard {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes projectcard {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes projectcard {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.project-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-name {
+  padding-left: 8em;
+}
+
+.links {
+  flex-direction: column;
+  width: 20%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.project-text {
+  background-color: white;
+  color: var(--background);
+  border-radius: 8px;
+  width: 48%;
+  -webkit-box-shadow: 1px 3px 27px -9px var(--select);
+  -moz-box-shadow: 1px 3px 27px -9px var(--select);
+  box-shadow: 1px 3px 27px -9px var(--select);
+}
+
+.project-link,
+.project-code {
+  display: inline-block;
+  height: 1.5em;
+  width: 5em;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  margin: 0.2em;
+  text-decoration: none;
+  background-color: var(--project-accent);
+  color: white;
+  border: 2px solid var(--project-accent);
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.project-link:hover,
+.project-code:hover {
+  color: var(--background);
+  background-color: var(--project-button-select);
+  border-color: var(--project-button-select);
+}
+
+.project-img {
+  border: 1px solid var(--project-accent);
+  border-radius: 8px;
+  width: 48%;
+  -webkit-box-shadow: 1px 3px 27px -9px var(--select);
+  -moz-box-shadow: 1px 3px 27px -9px var(--select);
+  box-shadow: 1px 3px 27px -9px var(--select);
 }
 
 /* SKILLS */

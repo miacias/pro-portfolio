@@ -65,7 +65,33 @@ function App() {
           </div>
         </section>
         {/* PORTFOLIO */}
-        <section id='portfolio'></section>
+        <section id='portfolio'>
+          <h2 className='section-header'>Portfolio</h2>
+          <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
+          <div id='project-container'>
+            {/* brew buddies, socket chat, hey boo boo, ecommerce db, organigramme, state park excursion, weather forecast */}
+            <div className='project-card'>
+              <div className='project-header'>
+                <h3 className='section-header project-name'>Project Name</h3>
+                <div className='links'>
+                  <a href='#' className='project-link'>Deployed</a>
+                  <a href='#' className='project-code'>GitHub</a>
+                </div>
+              </div>
+              <div className='project-info'>
+                <img className='project-img' src='./assets/images/hey-boo-boo.png'/>
+                <div className='project-text'>
+                  <p>description here</p>
+                  <ul>
+                    <li>tech stack list</li>
+                    <li>tech stack list</li>
+                    <li>tech stack list</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* SKILLS AND RESUME */}
         <section id='skills'>
           <h2 className='section-header'>Tools and Tech</h2>
@@ -77,6 +103,7 @@ function App() {
                 <li>TypeScript</li>
                 <li>HTML5</li>
                 <li>CSS3</li>
+                <li>Markdown</li>
               </ul>
             </li>
             <li><i className="fa-solid fa-box-open fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Tools & Packages</span>
@@ -84,7 +111,7 @@ function App() {
                 <li>Jest</li>
                 <li>Node.js, Express.js</li>
                 <li>React, Handlebars.js</li>
-                <li>Bootstrap, Ant Design UI</li>
+                <li>Bootstrap, Materialize. Ant Design UI</li>
                 <li>Third party and server-side RESTful APIs</li>
                 <li>Git, GitHub, GitLab, gh-pages, Heroku</li>
                 <li>Insomnia, MongoDB Compass, VS Code</li>

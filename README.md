@@ -12,3 +12,5 @@ Currently, two official plugins are available:
 - [Nav](https://alvarotrigo.com/blog/hamburger-menu-css/) - creating a decorated hamburger menu
 - [Contact form](https://codepen.io/bobbykorec/pen/qOGbyr) - CSS layout
 - [Resume embed](https://stackoverflow.com/questions/36146508/google-docs-iframe-how-to-customize-the-css-of-an-embedded-google-docs-iframe) - modifying embedded documents
+- [Gradient animator](https://www.gradient-animator.com/) - creating animated css gradients
+- [Box shadow](https://www.cssmatic.com/box-shadow) - creating css box shadows
