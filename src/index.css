@@ -174,14 +174,18 @@ main {
 }
 
 .resume-embed {
-  width: 100%;
-  /* height: calc(100vh - 250px); */
+  width: 60vw;
+  height: calc(100vh - 250px);
   border-radius: 10%;
   border: none;
 }
 
 #iframe-container {
   width: 100%;
+}
+
+.doc-content {
+  width: 20%;
 }
 
 #download-resume a,
@@ -255,7 +259,8 @@ button:hover {
 
 #contact-list {
   list-style-type: none;
-  margin-left: -30px;
+  /* margin-left: -30px; */
+  margin: 0 auto;
   padding-right: 20px;
   text-align: start;
 }
@@ -284,6 +289,7 @@ button:hover {
 
 .contact-text a:hover {
   color: chartreuse;
+  letter-spacing: 0.1em;
 }
 
 /* my socials */

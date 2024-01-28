@@ -1,7 +1,7 @@
 // import { useEffect, useState } from 'react';
 import { useState } from 'react';
-// import { SMTPClient } from 'emailjs';
 import './App.css';
+import EmbeddedDocs from './EmbeddedDocs';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
@@ -12,13 +12,6 @@ function App() {
     setMenuOpen(!menuOpen);
   };
 
-  // const client = new SMTPClient({
-  //   user: 'user',
-  //   password: 'password',
-  //   host: 'smtp.your-email.com',
-  //   ssl: true,
-  // });
-
   const contactFormChange = (e) => {
     const { name, value } = e.target;
     setContactData({ ...contactData, [name]: value });
@@ -27,8 +20,9 @@ function App() {
   const contactFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('hi')
-      // const response = await client.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
+      console.log('hi');
+      console.log('form data', contactData)
+      // const response = await emailjs.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
       // if (response.status === 200) alert('Thank you for your message! I will get back to you shortly.');
     } catch (err) {
       console.error(err);
@@ -38,12 +32,14 @@ function App() {
   return (
     <div className='app-container'>
       <header>
+        {/* HAMBUERGER MENU */}
         <div id='menu'>
           <div id='menu-bars' className={menuOpen ? 'change' : ''} onClick={menuClick}>
             <div id='bar-1' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
             <div id='bar-2' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
             <div id='bar-3' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
           </div>
+          {/* NAVIGATION */}
           <nav id='nav' className={menuOpen ? 'change' : ''}>
             <ul style={{ display: menuOpen ? 'block' : 'none' }}>
               {navOptions.map((item) => {
@@ -53,12 +49,14 @@ function App() {
           </nav>
         </div>
         <div className={`menu-bg ${menuOpen ? 'change-bg' : ''}`}></div>
+        {/* HEADER TITLE */}
         <div className='self'>
           <h1>Mia Ciasullo</h1>
           <p>Full Stack Developer</p>
         </div>
       </header>
       <main>
+        {/* ABOUT ME */}
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
@@ -67,8 +65,11 @@ function App() {
             <p>Thank you for taking the time to learn more about me and my work. Please feel free to browse my portfolio and contact me if you have any questions or if you&apos;re interested in working together!</p>
           </div>
         </section>
+        {/* PORTFOLIO */}
         <section id='portfolio'></section>
+        {/* SKILLS AND RESUME */}
         <section id='skills'>
+          {/* RESUME */}
           <h2 className='section-header'>Resume</h2>
           <div>
             <p>I invite you to learn more about my experience and skills!</p>
@@ -88,6 +89,7 @@ function App() {
             </iframe>
           </div>
         </section>
+        {/* CONTACT ME */}
         <section id='contact'>
           <h2 className='section-header'>Contact</h2>
           <div className='contact-container'>
@@ -156,6 +158,8 @@ function App() {
           </div>
         </section>
       </main>
+      <EmbeddedDocs/>
     </div>)}
+    
 
 export default App
