@@ -374,6 +374,7 @@ iframe {
 }
 
 #download-resume a,
+#open-resume a,
 button {
   display: inline-block;
   padding: 10px 20px;
@@ -548,5 +549,42 @@ button:hover {
   #skills-list>li {
     flex: 0 0 100%;
     margin-bottom: 1.8em;
+  }
+
+  /* PORTFOLIO */
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-header {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-name {
+    padding: 4%;
+    text-align: center;
+  }
+
+  .links-container {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .project-code,
+  .project-link {
+    margin-inline: 4%;
+    margin-bottom: 2%;
+  }
+
+  .project-info {
+    flex-direction: column;
+  }
+
+  .project-img,
+  .project-text {
+    width: 100%;
+    margin: 1.5%;
   }
 }

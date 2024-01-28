@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useState } from 'react';
 import './App.css';
 // import Project from './GitHub';
@@ -79,9 +80,9 @@ function App() {
             <div className='project-card'>
               <div className='project-header'>
                 <h3 className='section-header project-name'>Project Name</h3>
-                <div className='links'>
-                  <a href='#' className='project-link'>Deployed</a>
-                  <a href='#' className='project-code'>GitHub</a>
+                <div className='links-container'>
+                  <a href='#' className='project-link' target='_blank'>Deployed</a>
+                  <a href='#' className='project-code' target='_blank'>GitHub</a>
                 </div>
               </div>
               <div className='project-info'>
@@ -155,6 +156,11 @@ function App() {
               </a>
             </p>
           </div>
+          {window.innerWidth <= 768 ? (
+            <p id='open-resume'>
+              <a href='https://docs.google.com/document/d/1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw/view' target='_blank'>View my resume!</a>
+            </p>
+          ) : (
           <div id='iframe-container'>
             <iframe 
               className='resume-embed'
@@ -164,6 +170,7 @@ function App() {
               title='Mia Ciasullo resume'>Loading Resume…
             </iframe>
           </div>
+          )}
         </section>
         {/* CONTACT ME */}
         <section id='contact'>

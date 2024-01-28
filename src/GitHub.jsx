@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -47,10 +48,12 @@ const Project = ({ projectName, featured }) => {
             <a 
               href={projectData.deployed ? projectData.deployed : '#'} 
               className={`project-link ${!projectData.deployed ? 'inactive' : ''}`}
+              target='_blank'
             >{projectData.deployed ? 'Deployed' : ''}</a>
             <a 
               href={projectData.code}
               className={`project-code ${!projectData.code ? 'inactive' : ''}`}
+              target='_blank'
             >GitHub</a>
           </div>
         </div>
