@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const EmbeddedDocuments = () => {
+const EmbeddedDocs = () => {
   useEffect(() => {
       // Function to handle the CORS request and replace iframes with document content
       const handleEmbeddedDocuments = () => {
@@ -41,4 +41,4 @@ const EmbeddedDocuments = () => {
   return <div id="embedded-docs-placeholder"></div>;
 };
 
-export default EmbeddedDocuments;
+export default EmbeddedDocs;

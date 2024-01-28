@@ -1,7 +1,6 @@
-// import { useEffect, useState } from 'react';
 import { useState } from 'react';
 import './App.css';
-import EmbeddedDocs from './EmbeddedDocs';
+// import EmbeddedDocs from './EmbeddedDocs';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
@@ -69,6 +68,43 @@ function App() {
         <section id='portfolio'></section>
         {/* SKILLS AND RESUME */}
         <section id='skills'>
+          <h2 className='section-header'>Tools and Tech</h2>
+          {/* SKILLS */}
+          <ul id='skills-list'>
+            <li><i className="fa-solid fa-code fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Coding Languages</span>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </li>
+            <li><i className="fa-solid fa-box-open fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Tools & Packages</span>
+              <ul>
+                <li>Jest</li>
+                <li>Node.js, Express.js</li>
+                <li>React, Handlebars.js</li>
+                <li>Bootstrap, Ant Design UI</li>
+                <li>Third party and server-side RESTful APIs</li>
+                <li>Git, GitHub, GitLab, gh-pages, Heroku</li>
+                <li>Insomnia, MongoDB Compass, VS Code</li>
+              </ul>
+            </li>
+            <li><i className="fa-solid fa-database fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Databases</span>
+              <ul>
+                <li>SQL: MySQL, Sequelize.js</li>
+                <li>NoSQL: MongoDB, Mongoose</li>
+              </ul>
+            </li>
+            <li><i className="fa-solid fa-terminal fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Coding Skills</span>
+              <ul>
+                <li>MERN full stack</li>
+                <li>MVC framework</li>
+                <li>Agile methodologies</li>
+                <li>Pair programming</li>
+              </ul>
+            </li>
+          </ul>
           {/* RESUME */}
           <h2 className='section-header'>Resume</h2>
           <div>
@@ -126,15 +162,15 @@ function App() {
             <div id='direct-contact'>
               <ul id='contact-list'>
                 <li>
-                  <i className="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
                   <span className='contact-text location'>United States</span>
                 </li>
                 <li>
-                  <i className="fa-solid fa-phone-flip"></i>
+                  <i className="fa-solid fa-phone-flip" aria-hidden="true"></i>
                   <span className='contact-text phone'><a href='tel:1-215-779-8590' title='call me'>{`(215) 779-8590`}</a></span>
                 </li>
                 <li>
-                  <i className="fa-solid fa-envelope"></i>
+                  <i className="fa-solid fa-envelope" aria-hidden="true"></i>
                   <span className='contact-text email'><a href='mailto:miaciasullo@gmail.com' title='email me'>miaciasullo@gmail.com</a></span>
                 </li>
               </ul>
@@ -158,7 +194,7 @@ function App() {
           </div>
         </section>
       </main>
-      <EmbeddedDocs/>
+      {/* <EmbeddedDocs/> */}
     </div>)}
     
 

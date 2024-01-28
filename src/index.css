@@ -1,10 +1,12 @@
 :root {
+  /* VARIABLES */
   /* pastel sapphire */
   --highlight: #d7c7f9;
   /* dark purple */
   --select: #31254a;
   /* mid lilac */
   --background: #67548c;
+  --header: #FFFADE;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -154,7 +156,7 @@ main {
   text-align: center;
   margin: 0 auto;
   padding: 40px 0;
-  color: white;
+  color: var(--header);
   text-transform: uppercase;
   letter-spacing: 6px;
 }
@@ -165,6 +167,41 @@ main {
   text-align: left;
 }
 
+/* SKILLS */
+
+#skills-list,
+#skills-list li {
+  list-style: none;
+}
+
+#skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+}
+
+.skillset {
+  padding-left: 20px;
+  list-style: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.skillset>li {
+  margin-bottom: 5px;
+}
+
+.skillset>li:first-child {
+  margin-top: 5px;
+}
+
+#skills-list>li {
+  flex: 0 0 45%;
+  margin-bottom: 20px;
+}
+
 /* RESUME */
 
 #download-resume {
@@ -173,19 +210,13 @@ main {
   margin-top: 2em;
 }
 
-.resume-embed {
+iframe {
   width: 60vw;
+  max-width: 830px;
   height: calc(100vh - 250px);
   border-radius: 10%;
   border: none;
-}
-
-#iframe-container {
-  width: 100%;
-}
-
-.doc-content {
-  width: 20%;
+  overflow: scroll;
 }
 
 #download-resume a,
@@ -357,5 +388,11 @@ button:hover {
   #direct-contact {
     width: 100%;
     align-self: center;
+  }
+
+  /* sets to column */
+  #skills-list>li {
+    flex: 0 0 100%;
+    margin-bottom: 1.8em;
   }
 }
