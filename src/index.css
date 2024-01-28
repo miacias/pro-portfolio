@@ -247,7 +247,7 @@ main {
   padding-left: 8em;
 }
 
-.links {
+.links-container {
   flex-direction: column;
   width: 20%;
 }
@@ -259,6 +259,15 @@ main {
   justify-content: space-between;
 }
 
+.project-img {
+  border: 1px solid var(--project-accent);
+  border-radius: 8px;
+  width: 48%;
+  -webkit-box-shadow: 1px 3px 27px -9px var(--select);
+  -moz-box-shadow: 1px 3px 27px -9px var(--select);
+  box-shadow: 1px 3px 27px -9px var(--select);
+}
+
 .project-text {
   background-color: white;
   color: var(--background);
@@ -267,6 +276,7 @@ main {
   -webkit-box-shadow: 1px 3px 27px -9px var(--select);
   -moz-box-shadow: 1px 3px 27px -9px var(--select);
   box-shadow: 1px 3px 27px -9px var(--select);
+  overflow: scroll;
 }
 
 .project-link,
@@ -285,6 +295,14 @@ main {
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+.inactive::before {
+  content: "Deployed";
+}
+
+.inactive:hover::before {
+  content: "🚫";
+}
+
 .project-link:hover,
 .project-code:hover {
   color: var(--background);
@@ -292,13 +310,15 @@ main {
   border-color: var(--project-button-select);
 }
 
-.project-img {
-  border: 1px solid var(--project-accent);
-  border-radius: 8px;
-  width: 48%;
-  -webkit-box-shadow: 1px 3px 27px -9px var(--select);
-  -moz-box-shadow: 1px 3px 27px -9px var(--select);
-  box-shadow: 1px 3px 27px -9px var(--select);
+.topic {
+  display: inline-block;
+  color: var(--header);
+  font-weight: 600;
+  font-size: xx-small;
+  margin: .1em;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: var(--project);
 }
 
 /* SKILLS */

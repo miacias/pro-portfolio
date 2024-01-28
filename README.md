@@ -14,3 +14,4 @@ Currently, two official plugins are available:
 - [Resume embed](https://stackoverflow.com/questions/36146508/google-docs-iframe-how-to-customize-the-css-of-an-embedded-google-docs-iframe) - modifying embedded documents
 - [Gradient animator](https://www.gradient-animator.com/) - creating animated css gradients
 - [Box shadow](https://www.cssmatic.com/box-shadow) - creating css box shadows
+- [React Prop Types](https://legacy.reactjs.org/docs/typechecking-with-proptypes.html) - legacy prop type validation (non-TypeScript)

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-// import EmbeddedDocs from './EmbeddedDocs';
+// import Project from './GitHub';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
@@ -69,7 +69,13 @@ function App() {
           <h2 className='section-header'>Portfolio</h2>
           <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
           <div id='project-container'>
-            {/* brew buddies, socket chat, hey boo boo, ecommerce db, organigramme, state park excursion, weather forecast */}
+            {/* <Project projectName='brew-buddies-v2' featured={true}/>
+            <Project projectName='socket-chat' featured={true}/>
+            <Project projectName='hey-boo-boo' featured={true}/>
+            <Project projectName='e-commerce-database' featured={false}/>
+            <Project projectName='organigramme' featured={false}/>
+            <Project projectName='state-park-excursion' featured={false}/>
+            <Project projectName='weather-forecast' featured={false}/> */}
             <div className='project-card'>
               <div className='project-header'>
                 <h3 className='section-header project-name'>Project Name</h3>
@@ -83,10 +89,17 @@ function App() {
                 <div className='project-text'>
                   <p>description here</p>
                   <ul>
-                    <li>tech stack list</li>
-                    <li>tech stack list</li>
-                    <li>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
+                    <li className='topic'>tech stack list</li>
                   </ul>
+                  <p>created date</p>
+                  <p>updated date</p>
                 </div>
               </div>
             </div>
