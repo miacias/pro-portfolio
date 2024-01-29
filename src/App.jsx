@@ -10,6 +10,7 @@ function App() {
   const [contactData, setContactData] = useState({});
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // ----- resume display/button control -----
   useEffect(() => {
     const handleWindowResize = () => {
       setWindowWidth(window.innerWidth);
@@ -20,10 +21,12 @@ function App() {
     }
   }, []);
 
+  // ----- hamburger menu control -----
   const menuClick = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // ----- contact form controls -----
   const contactFormChange = (e) => {
     const { name, value } = e.target;
     setContactData({ ...contactData, [name]: value });
@@ -34,8 +37,6 @@ function App() {
     const serviceId = 'service_tjsoedn';
     const templateId = 'template_ly5vrzm';
     try {
-      console.log('hi');
-      console.log('form data', contactData)
       const response = await emailjs.sendForm(serviceId, templateId, '#contact-form', 'DOsrgnZ-5O0QZj-fu')
       if (response.status === 200) {
         alert('Thank you for your message! I will get back to you shortly.');
@@ -46,6 +47,7 @@ function App() {
     }
   };
 
+  // ----- render page -----
   return (
     <div className='app-container'>
       <header>
@@ -82,9 +84,8 @@ function App() {
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
-            <p>I am a former French teacher and linguist turned full-stack developer! As someone who has always been drawn to creative and artistic outlets, I have found programming to be the perfect avenue for my unique perspective and problem-solving skills. My journey into the world of tech began when I discovered my passion for designing and building projects for my students. The more I learned, the more fascinated I became with the endless possibilities of coding. </p>
-            <p>From crafting intuitive user interfaces to optimizing backend functionality, I relish the opportunity to build innovative and efficient solutions. Coming from the education world, I bring a collaborative approach to my work, always striving to understand the needs and goals of my clients and team members. Whether I&apos;m building a custom web application or optimizing existing code, I am committed to delivering quality results that exceed expectations.</p>
-            <p>Thank you for taking the time to learn more about me and my work. Please feel free to browse my portfolio and contact me if you have any questions or if you&apos;re interested in working together!</p>
+            <p>As a professionally trained French teacher and linguist, I discovered my passion for designing and building projects for my students. I decided to pursue my love for language and creativity by picking up coding langauges from the University of Pennsylvania&apos;s LPS Coding Boot Camp. The more I learned, the more fascinated I became with the endless possibilities of coding.</p>
+            <p>From crafting intuitive user interfaces to optimizing backend functionality, I relish the opportunity to build innovative and efficient solutions. With my background in education, I bring a collaborative approach to my work, always striving to understand the needs and goals of my clients and team members. Whether I&apos;m building a custom web application or optimizing existing code, I am committed to delivering quality results.</p>
           </div>
         </section>
         {/* PORTFOLIO */}
@@ -147,10 +148,10 @@ function App() {
               <ul>
                 <li>Jest</li>
                 <li>Node.js, Express.js</li>
-                <li>React, Handlebars.js</li>
+                <li>React, Vite, Handlebars.js</li>
                 <li>Bootstrap, Materialize. Ant Design UI</li>
                 <li>Third party and server-side RESTful APIs</li>
-                <li>Git, GitHub, GitLab, gh-pages, Heroku</li>
+                <li>Git, GitHub, GitLab, gh-pages, Heroku, Vercel</li>
                 <li>Insomnia, MongoDB Compass, VS Code</li>
               </ul>
             </li>
@@ -198,8 +199,10 @@ function App() {
         {/* CONTACT ME */}
         <section id='contact'>
           <h2 className='section-header'>Contact</h2>
+          <p>Thank you for taking the time to learn more about me and my work.</p>
+          <p>Please feel free to contact me if you have any questions or if you&apos;re interested in working together!</p>
           <div className='contact-container'>
-            <form id='contact-form' role='form'
+            <form id='contact-form' role='form' autoComplete='off'
               onSubmit={contactFormSubmit} 
               onChange={contactFormChange}
             >
