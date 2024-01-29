@@ -20,3 +20,5 @@ Currently, two official plugins are available:
 - [Box shadow](https://www.cssmatic.com/box-shadow) - creating css box shadows
 - [React Prop Types](https://legacy.reactjs.org/docs/typechecking-with-proptypes.html) - legacy prop type validation (non-TypeScript)
 - [Color Palette](https://mycolor.space/?hex=%2367548C&sub=1) - theme colors
+- [Domain redirect](https://jorgearuv.dev/setting-up-namecheap-domain-in-vercel) - send Vercel deploy to custom domain
+- [Dog favicon](https://www.flaticon.com/free-icon/dog_1723750?term=dog&page=1&position=25&origin=tag&related_id=1723750)
