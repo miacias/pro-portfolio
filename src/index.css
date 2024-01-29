@@ -10,7 +10,6 @@
   --project: #FF9475;
   --project-accent: #AB6095;
   --project-button: #E4728A;
-  /* --project-button-select: #FFC465; */
   --project-button-select: #F9F871;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -28,8 +27,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  margin: 0 auto;
+  padding: 0;
+}
+
 body {
   height: 100vh;
+  margin: auto;
 }
 
 
@@ -174,9 +179,31 @@ main {
 
 /* PORTFOLIO */
 
-.project-card {
+.featured-card {
   background: linear-gradient(270deg, #ff9475, #ffc465, #e4728a);
   background-size: 600% 600%;
+  border-radius: 20px;
+  margin: 4% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 2em;
+
+  -webkit-animation: projectcard 30s ease infinite;
+  -moz-animation: projectcard 30s ease infinite;
+  animation: projectcard 30s ease infinite;
+
+  -webkit-box-shadow: 10px 10px 33px -12px var(--select);
+  -moz-box-shadow: 10px 10px 33px -12px var(--select);
+  box-shadow: 10px 10px 33px -12px var(--select);
+}
+
+.project-card {
+  background: linear-gradient(270deg, #4467A6, #008CB4, #00A78C);
+  background-size: 600% 600%;
+  margin: 2% auto;
+  width: 70%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -445,7 +472,6 @@ button:hover {
 
 #contact-list {
   list-style-type: none;
-  /* margin-left: -30px; */
   margin: 0 auto;
   padding-right: 20px;
   text-align: start;
@@ -553,7 +579,8 @@ button:hover {
 
   /* PORTFOLIO */
 
-  .project-card {
+  .project-card,
+  .featured-card {
     width: 100%;
   }
 

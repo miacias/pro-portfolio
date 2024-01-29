@@ -1,12 +1,23 @@
 /* eslint-disable react/jsx-no-target-blank */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-// import Project from './GitHub';
+import Project from './GitHub';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactData, setContactData] = useState({});
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    }
+  }, []);
 
   const menuClick = () => {
     setMenuOpen(!menuOpen);
@@ -70,14 +81,14 @@ function App() {
           <h2 className='section-header'>Portfolio</h2>
           <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
           <div id='project-container'>
-            {/* <Project projectName='brew-buddies-v2' featured={true}/>
+            <Project projectName='brew-buddies-v2' featured={true}/>
             <Project projectName='socket-chat' featured={true}/>
             <Project projectName='hey-boo-boo' featured={true}/>
             <Project projectName='e-commerce-database' featured={false}/>
             <Project projectName='organigramme' featured={false}/>
             <Project projectName='state-park-excursion' featured={false}/>
-            <Project projectName='weather-forecast' featured={false}/> */}
-            <div className='project-card'>
+            <Project projectName='weather-forecast' featured={false}/>
+            {/* <div className='project-card'>
               <div className='project-header'>
                 <h3 className='section-header project-name'>Project Name</h3>
                 <div className='links-container'>
@@ -103,7 +114,7 @@ function App() {
                   <p>updated date</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         {/* SKILLS AND RESUME */}
@@ -156,7 +167,7 @@ function App() {
               </a>
             </p>
           </div>
-          {window.innerWidth <= 768 ? (
+          {windowWidth <= 768 ? (
             <p id='open-resume'>
               <a href='https://docs.google.com/document/d/1gwYNMpDvR7mwU4Usuqo5Eq1bl4gdmNCJHpY-1So33Vw/view' target='_blank'>View my resume!</a>
             </p>

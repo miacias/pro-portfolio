@@ -41,6 +41,39 @@ const Project = ({ projectName, featured }) => {
 
   if (featured) {
     return (
+      <div className='featured-card'>
+        <div className='project-header'>
+          <h3 className='section-header project-name'>{projectName.split('-').join(' ')}</h3>
+          <div className='links-container'>
+            <a 
+              href={projectData.deployed ? projectData.deployed : '#'} 
+              className={`project-link ${!projectData.deployed ? 'inactive' : ''}`}
+              target='_blank'
+            >{projectData.deployed ? 'Deployed' : ''}</a>
+            <a 
+              href={projectData.code}
+              className={`project-code ${!projectData.code ? 'inactive' : ''}`}
+              target='_blank'
+            >GitHub</a>
+          </div>
+        </div>
+        <div className='project-info'>
+          <img className='project-img' src={`./assets/images/${projectName}.png`}/>
+          <div className='project-text'>
+            <p>{projectData.description}</p>
+            <ul>
+              {projectData.topics.map((topic, index) => {
+              return (<li className='topic' key={index}>{topic}</li>)
+              })}
+            </ul>
+            <p>Created: {projectData.createdDate}</p>
+            <p>Last updated: {projectData.updatedDate}</p>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
       <div className='project-card'>
         <div className='project-header'>
           <h3 className='section-header project-name'>{projectName.split('-').join(' ')}</h3>
@@ -58,7 +91,7 @@ const Project = ({ projectName, featured }) => {
           </div>
         </div>
         <div className='project-info'>
-          <img className='project-img' src='./assets/images/hey-boo-boo.png'/>
+          <img className='project-img' src={`./assets/images/${projectName}.png`}/>
           <div className='project-text'>
             <p>{projectData.description}</p>
             <ul>
@@ -66,14 +99,12 @@ const Project = ({ projectName, featured }) => {
               return (<li className='topic' key={index}>{topic}</li>)
               })}
             </ul>
-            <p>Created {projectData.createdDate}</p>
-            <p>Last updated {projectData.updatedDate}</p>
+            <p>Created: {projectData.createdDate}</p>
+            <p>Last updated: {projectData.updatedDate}</p>
           </div>
         </div>
       </div>
     );
-  } else {
-    return (<div>Cool project bro but not featured</div>);
   }
 }
 
