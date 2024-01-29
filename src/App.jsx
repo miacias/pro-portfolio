@@ -60,7 +60,12 @@ function App() {
           <nav id='nav' className={menuOpen ? 'change' : ''}>
             <ul style={{ display: menuOpen ? 'block' : 'none' }}>
               {navOptions.map((item) => {
-                return <li key={item.split(' ').join('-')}><a href={`/${item.split(' ').join('-').toLowerCase()}`}>{item}</a></li>;
+                return (
+                  <li key={item.split(' ').join('-')}>
+                    {/* <a href={`/${item.split(' ').join('-').toLowerCase()}`}> */}
+                    <a href={`#${item.split(' ').join('-').toLowerCase()}`}>
+                      {item}</a>
+                    </li>);
               })}
             </ul>
           </nav>
