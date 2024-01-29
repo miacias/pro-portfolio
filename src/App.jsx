@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './App.css';
 import Project from './GitHub';
 
@@ -30,11 +31,16 @@ function App() {
 
   const contactFormSubmit = async (e) => {
     e.preventDefault();
+    const serviceId = 'service_tjsoedn';
+    const templateId = 'template_ly5vrzm';
     try {
       console.log('hi');
       console.log('form data', contactData)
-      // const response = await emailjs.sendAsync('service_tjsoedn', 'template_ly5vrzm', '#contact-form', 'DOsrgnZ-5O0QZj-fu')
-      // if (response.status === 200) alert('Thank you for your message! I will get back to you shortly.');
+      const response = await emailjs.sendForm(serviceId, templateId, '#contact-form', 'DOsrgnZ-5O0QZj-fu')
+      if (response.status === 200) {
+        alert('Thank you for your message! I will get back to you shortly.');
+        document.getElementById('contact-form').reset();
+      }
     } catch (err) {
       console.error(err);
     }
@@ -82,12 +88,13 @@ function App() {
           <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
           <div id='project-container'>
             <Project projectName='brew-buddies-v2' featured={true}/>
-            <Project projectName='socket-chat' featured={true}/>
+            {/* <Project projectName='socket-chat' featured={true}/> */}
             <Project projectName='hey-boo-boo' featured={true}/>
             <Project projectName='e-commerce-database' featured={false}/>
             <Project projectName='organigramme' featured={false}/>
             <Project projectName='state-park-excursion' featured={false}/>
             <Project projectName='weather-forecast' featured={false}/>
+            {/* SAMPLE PROJECT CARD */}
             {/* <div className='project-card'>
               <div className='project-header'>
                 <h3 className='section-header project-name'>Project Name</h3>
