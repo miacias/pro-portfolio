@@ -84,8 +84,7 @@ function App() {
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
-            <p>As a professionally trained French teacher and linguist, I discovered my passion for designing and building projects for my students. I decided to pursue my love for language and creativity by picking up coding langauges from the University of Pennsylvania&apos;s LPS Coding Boot Camp. The more I learned, the more fascinated I became with the endless possibilities of coding.</p>
-            <p>From crafting intuitive user interfaces to optimizing backend functionality, I relish the opportunity to build innovative and efficient solutions. With my background in education, I bring a collaborative approach to my work, always striving to understand the needs and goals of my clients and team members. Whether I&apos;m building a custom web application or optimizing existing code, I am committed to delivering quality results.</p>
+          <p>As a full stack software engineer, I bring experience in crafting intuitive user interfaces and optimizing backend functionality. I originally began my journey into coding at the University of Pennsylvania&apos;s LPS Coding Boot Camp. Now, I&apos;m excited to bring my diverse background and coding expertise to a collaborative team environment, where I can contribute to innovative projects and continue to grow professionally.</p>
           </div>
         </section>
         {/* PORTFOLIO */}
