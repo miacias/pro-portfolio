@@ -9,7 +9,7 @@
   --project-button: #E4728A;
   --project-button-select: #F9F871;
 
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -24,14 +24,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
-#root {
-  margin: 0 auto;
-  padding: 0;
-}
-
 body {
   height: 100vh;
   margin: auto;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.1em;
 }
 
 
@@ -565,9 +563,29 @@ button:hover {
   color: var(--highlight);
 }
 
+/* ---------- FOOTER ---------- */
+
+footer {
+  padding-bottom: 20px;
+  font-size: x-small;
+}
+
+footer hr {
+  border: none;
+  background-image: linear-gradient(to right, white 10%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 8px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+}
+
 /* ---------- MOBILE PHONE ---------- */
 
 @media screen and (max-width: 768px) {
+
+  body {
+    font-size: 1em;
+  }
 
   /* ---------- MOBILE CONTACT ---------- */
   .contact-container {
@@ -578,6 +596,23 @@ button:hover {
   #direct-contact {
     width: 100%;
     align-self: center;
+    margin: 1em 0 1em 0;
+  }
+
+  #contact-list {
+    font-size: 0.8em;
+  }
+
+  .location {
+    margin-left: 20px;
+  }
+
+  .phone {
+    margin-left: 18px;
+  }
+
+  .email {
+    margin-left: 20px;
   }
 
   /* ---------- MOBILE SKILLS ---------- */

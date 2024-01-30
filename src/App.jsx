@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './App.css';
 import Project from './GitHub';
+import { getCurrentYear } from './utils/date';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
@@ -266,6 +267,10 @@ function App() {
           </div>
         </section>
       </main>
+      <footer>
+        <hr/>
+        <p>Copyright &copy; {getCurrentYear()} Mia Ciasullo | All rights reserved.</p>
+      </footer>
       {/* <EmbeddedDocs/> */}
     </div>)}
     
