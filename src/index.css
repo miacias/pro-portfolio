@@ -302,6 +302,11 @@ main {
   -moz-box-shadow: 1px 3px 27px -9px var(--select);
   box-shadow: 1px 3px 27px -9px var(--select);
   overflow: scroll;
+  padding: .2em;
+}
+
+.description {
+  padding-left: 0.5em;
 }
 
 .project-link,
@@ -335,6 +340,10 @@ main {
   border-color: var(--project-button-select);
 }
 
+.topics-container {
+  padding: 0 2.5em 0 2.5em;
+}
+
 .topic {
   display: inline-block;
   color: var(--header);
@@ -344,6 +353,14 @@ main {
   padding: 5px 10px;
   border-radius: 20px;
   background-color: var(--project);
+}
+
+.dates {
+  font-size: x-small;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
 }
 
 /* ---------- SKILLS ---------- */

@@ -52,14 +52,14 @@ function App() {
   return (
     <div className='app-container'>
       <header>
-        {/* HAMBUERGER MENU */}
+        {/* ----- HAMBUERGER MENU ----- */}
         <div id='menu'>
           <div id='menu-bars' className={menuOpen ? 'change' : ''} onClick={menuClick}>
             <div id='bar-1' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
             <div id='bar-2' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
             <div id='bar-3' className={`menu-bar ${menuOpen ? 'change' : ''}`}></div>
           </div>
-          {/* NAVIGATION */}
+          {/* ----- NAVIGATION ----- */}
           <nav id='nav' className={menuOpen ? 'change' : ''}>
             <ul style={{ display: menuOpen ? 'block' : 'none' }}>
               {navOptions.map((item) => {
@@ -74,21 +74,21 @@ function App() {
           </nav>
         </div>
         <div className={`menu-bg ${menuOpen ? 'change-bg' : ''}`}></div>
-        {/* HEADER TITLE */}
+        {/* ----- HEADER TITLE ----- */}
         <div className='self'>
           <h1>Mia Ciasullo</h1>
           <p>Full Stack Developer</p>
         </div>
       </header>
       <main>
-        {/* ABOUT ME */}
+        {/* ----- ABOUT ME ----- */}
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
           <p>As a full stack software engineer, I bring experience in crafting intuitive user interfaces and optimizing backend functionality. I originally began my journey into coding at the University of Pennsylvania&apos;s LPS Coding Boot Camp. Now, I&apos;m excited to bring my diverse background and coding expertise to a collaborative team environment, where I can contribute to innovative projects and continue to grow professionally.</p>
           </div>
         </section>
-        {/* PORTFOLIO */}
+        {/* ----- PORTFOLIO ----- */}
         <section id='portfolio'>
           <h2 className='section-header'>Portfolio</h2>
           <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
@@ -100,7 +100,7 @@ function App() {
             <Project projectName='organigramme' featured={false}/>
             <Project projectName='state-park-excursion' featured={false}/>
             <Project projectName='weather-forecast' featured={false}/>
-            {/* SAMPLE PROJECT CARD */}
+            {/* ----- SAMPLE PROJECT CARD ----- */}
             {/* <div className='project-card'>
               <div className='project-header'>
                 <h3 className='section-header project-name'>Project Name</h3>
@@ -130,10 +130,10 @@ function App() {
             </div> */}
           </div>
         </section>
-        {/* SKILLS AND RESUME */}
+        {/* ----- SKILLS AND RESUME ----- */}
         <section id='skills'>
           <h2 className='section-header'>Tools and Tech</h2>
-          {/* SKILLS */}
+          {/* ----- SKILLS ----- */}
           <ul id='skills-list'>
             <li><i className="fa-solid fa-code fa-2xl" style={{ color: "#e4728b" }} aria-hidden="true"></i><span className='skillset section-header'>Coding Languages</span>
               <ul>
@@ -170,7 +170,7 @@ function App() {
               </ul>
             </li>
           </ul>
-          {/* RESUME */}
+          {/* ----- RESUME ----- */}
           <h2 className='section-header'>Resume</h2>
           <div>
             <p>I invite you to learn more about my experience and skills!</p>
@@ -196,7 +196,7 @@ function App() {
           </div>
           )}
         </section>
-        {/* CONTACT ME */}
+        {/* ----- CONTACT ME ----- */}
         <section id='contact'>
           <h2 className='section-header'>Contact</h2>
           <p>Thank you for taking the time to learn more about me and my work.</p>
@@ -205,10 +205,12 @@ function App() {
             <form id='contact-form' role='form' autoComplete='off'
               onSubmit={contactFormSubmit} 
               onChange={contactFormChange}
+              aria-live='assertive'
             >
               <input 
                 id='contact-name'
                 className='user-input'
+                role='textbox'
                 name='name'
                 defaultValue=''
                 required={true}
@@ -217,6 +219,7 @@ function App() {
               <input
                 id='contact-email'
                 className='user-input'
+                role='textbox'
                 name='email'
                 defaultValue=''
                 required={true}
@@ -225,6 +228,7 @@ function App() {
               <textarea
                 id='contact-msg'
                 className='user-input'
+                role='textbox'
                 name='message'
                 defaultValue=''
                 required={true}
@@ -267,10 +271,12 @@ function App() {
           </div>
         </section>
       </main>
+      {/* ----- COPYRIGHT ----- */}
       <footer>
         <hr/>
         <p>Copyright &copy; {getCurrentYear()} Mia Ciasullo | All rights reserved.</p>
       </footer>
+      {/* ----- CUSTOM GOOGLE DOC EMBED ----- */}
       {/* <EmbeddedDocs/> */}
     </div>)}
     

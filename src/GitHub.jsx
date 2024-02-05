@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { altText } from './utils/altText';
 
 const Project = ({ projectName, featured }) => {
   const [projectData, setProjectData] = useState(null);
@@ -11,6 +12,7 @@ const Project = ({ projectName, featured }) => {
     return new Intl.DateTimeFormat("default", options).format(date);
   };
 
+  // fetch project repositories
   useEffect(() => {
     const fetchRepo = async () => {
       try {
@@ -58,16 +60,18 @@ const Project = ({ projectName, featured }) => {
           </div>
         </div>
         <div className='project-info'>
-          <img className='project-img' src={`./assets/images/${projectName}.png`}/>
+          <img className='project-img' src={`./assets/images/${projectName}.png`} alt={altText(projectName)}/>
           <div className='project-text'>
-            <p>{projectData.description}</p>
-            <ul>
+            <p className='description'>{projectData.description}</p>
+            <ul className='topics-container'>
               {projectData.topics.map((topic, index) => {
               return (<li className='topic' key={index}>{topic}</li>)
               })}
             </ul>
-            <p>Created: {projectData.createdDate}</p>
-            <p>Last updated: {projectData.updatedDate}</p>
+            <div className='dates'>
+              <p>Created: {projectData.createdDate}</p>
+              <p>Last updated: {projectData.updatedDate}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -91,16 +95,18 @@ const Project = ({ projectName, featured }) => {
           </div>
         </div>
         <div className='project-info'>
-          <img className='project-img' src={`./assets/images/${projectName}.png`}/>
+          <img className='project-img' src={`./assets/images/${projectName}.png`} alt=''/>
           <div className='project-text'>
-            <p>{projectData.description}</p>
-            <ul>
+            <p className='description'>{projectData.description}</p>
+            <ul className='topics-container'>
               {projectData.topics.map((topic, index) => {
               return (<li className='topic' key={index}>{topic}</li>)
               })}
             </ul>
-            <p>Created: {projectData.createdDate}</p>
-            <p>Last updated: {projectData.updatedDate}</p>
+            <div className='dates'>
+              <p>Created: {projectData.createdDate}</p>
+              <p>Last updated: {projectData.updatedDate}</p>
+            </div>
           </div>
         </div>
       </div>
