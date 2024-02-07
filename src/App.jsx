@@ -149,7 +149,7 @@ function App() {
                 <li>Jest</li>
                 <li>Node.js, Express.js</li>
                 <li>React, Vite, Handlebars.js</li>
-                <li>Bootstrap, Materialize. Ant Design UI</li>
+                <li>Bootstrap, Materialize, Ant Design UI</li>
                 <li>Third party and server-side RESTful APIs</li>
                 <li>Git, GitHub, GitLab, gh-pages, Heroku, Vercel</li>
                 <li>Insomnia, MongoDB Compass, VS Code</li>
