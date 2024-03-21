@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 import './App.css';
 import Project from './GitHub';
 import { getCurrentYear } from './utils/date';
+import profilePicture from './assets/profile-picture.jpg';
 
 function App() {
   const navOptions = ['About Me', 'Portfolio', 'Skills', 'Contact'];
@@ -85,7 +86,8 @@ function App() {
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
-          <p>As a full stack software engineer, I bring experience in crafting intuitive user interfaces and optimizing backend functionality. I originally began my journey into coding at the University of Pennsylvania&apos;s LPS Coding Boot Camp. Now, I&apos;m excited to bring my diverse background and coding expertise to a collaborative team environment, where I can contribute to innovative projects and continue to grow professionally.</p>
+            <p>As a full stack software engineer, I bring experience in crafting intuitive user interfaces and optimizing backend functionality. I originally began my journey into coding at the University of Pennsylvania&apos;s LPS Coding Boot Camp. Now, I&apos;m excited to bring my diverse background and coding expertise to a collaborative team environment, where I can contribute to innovative projects and continue to grow professionally.</p>
+            <img id='profile-picture' src={profilePicture} alt='Mia at a Japanese temple posing next to a giant lantern'/>
           </div>
         </section>
         {/* ----- PORTFOLIO ----- */}

@@ -171,6 +171,20 @@ main {
   text-align: left;
 }
 
+.my-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#profile-picture {
+  width: 20%;
+  border-radius: 50%;
+  display: inline;
+  float: right;
+  margin-left: 1em;
+}
+
 /* ---------- PORTFOLIO ---------- */
 
 #portfolio p {
