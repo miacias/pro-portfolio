@@ -1,17 +1,59 @@
-# React + Vite
+# Professional Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This website showcases my abilities to write code in a variety of settings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Tools
+- [Badges](#badges)
+- [Installation](#installation)
+- [Tests](#tests)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributors](#contributors)
+- [Roadmap](#roadmap)
+- [Credits](#credits)
+- [Technologies](#technologies)
+- [License](#license)
 
-- [Vite.js](https://vitejs.dev/) - React development environment
+## Badges
+
+[![License](https://img.shields.io/badge/license-MIT-blue?logo=github)](https://github.com/miacias/setzu-live-store/blob/main/LICENSE)
+
+## Installation
+
+N/A. For testing purposes, feel free to download the code via SSH, install packages with `npm i`, and test the site locally with `npm run dev`.
+
+## Tests
+
+No tests at this time.
+
+## Usage
+
+Please visit [miaciasullo.com](https://www.miaciasullo.com/)!
+
+## Features
+
+The site uses React and GitHub API to import key information about public projects.
+
+## Contributors
+
+- Mia Ciasullo, developer. Visit on [GitHub](https://github.com/miacias) and on [LinkedIn](https://www.linkedin.com/in/miaciasullo).
+
+## Roadmap
+
+Projects will be added, when possible, if clients from freelancing projects allow.
+For future development on thie site specifically, I intend to make full use of React components and break the site into smaller pieces as time allows.
 
 ## Credits
+
+### Technologies & Tools used:
+
+- [Vite.js](https://vitejs.dev/) - React development environment
+- [VS Code](https://code.visualstudio.com/)
+
+### Tutorials referenced:
 
 - [Nav](https://alvarotrigo.com/blog/hamburger-menu-css/) - creating a decorated hamburger menu
 - [Contact form](https://codepen.io/bobbykorec/pen/qOGbyr) - CSS layout
@@ -22,3 +64,7 @@ Currently, two official plugins are available:
 - [Color Palette](https://mycolor.space/?hex=%2367548C&sub=1) - theme colors
 - [Domain redirect](https://jorgearuv.dev/setting-up-namecheap-domain-in-vercel) - send Vercel deploy to custom domain
 - [Dog favicon](https://www.flaticon.com/free-icon/dog_1723750?term=dog&page=1&position=25&origin=tag&related_id=1723750)
+
+### Artist(s):
+
+- N/A
