@@ -93,6 +93,7 @@ function App() {
           <h2 className='section-header'>Portfolio</h2>
           <p>Applications I&apos;ve been building on my own time use a wide variety of technologies, all of which are right here! In addition, I freelance for Setzu LLC, which is currently building an Inventory Management System. If you&apos;d like to get a glimpse of my Setzu LLC work, please schedule a 1:1 demo!</p>
           <div id='project-container'>
+            <Project projectName='lees-cleaners' featured={true}/>
             <Project projectName='brew-buddies-v2' featured={true}/>
             {/* <Project projectName='socket-chat' featured={true}/> */}
             <Project projectName='hey-boo-boo' featured={true}/>
