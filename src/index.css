@@ -178,7 +178,8 @@ main {
 }
 
 #profile-picture {
-  width: 20%;
+  max-width: 30%;
+  width: 100%;
   border-radius: 50%;
   display: inline;
   float: right;
@@ -616,6 +617,19 @@ footer hr {
 
   body {
     font-size: 1em;
+  }
+
+  /* ---------- MOBILE ABOUT ---------- */
+
+  .my-info {
+    flex-direction: column-reverse;
+  }
+
+  #profile-picture {
+    max-width: 60%;
+    width: 100%;
+    margin: 0;
+    align-items: center;
   }
 
   /* ---------- MOBILE CONTACT ---------- */
