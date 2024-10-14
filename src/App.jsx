@@ -86,7 +86,8 @@ function App() {
         <section id='about-me'>
           <h2 className='section-header'>About Me</h2>
           <div className='my-info'>
-            <p>As a full stack software engineer, I specialize in creating intuitive, user-friendly interfaces and optimizing backend systems to drive efficiency. I began my coding journey at the University of Pennsylvania&apos;s LPS Coding Boot Camp, and since then, I&apos;ve had the opportunity to work on both large-scale enterprise projects and dynamic freelance assignments. Currently, I am part of the NAVSUP Enterprise Web team, where I contribute to developing intranet web and mobile applications for the U.S. Navy, while also consulting with small businesses as a hobby freelance developer to deliver custom solutions. I&apos;m excited to continue growing my expertise in technologies like JavaScript, React, SQL, and NoSQL, and contribute to innovative projects in a collaborative, agile environment.</p>
+            <p>As a full stack software engineer, I specialize in creating intuitive, user-friendly interfaces and optimizing backend systems to drive efficiency. I began my coding journey at the University of Pennsylvania&apos;s LPS Coding Boot Camp, and since then, I&apos;ve had the opportunity to work on both large-scale enterprise projects and dynamic freelance assignments.</p>
+            <p>Currently, I am part of the NAVSUP Enterprise Web team, where I contribute to developing intranet web and mobile applications for the U.S. Navy, while also consulting with small businesses as a hobby freelance developer to deliver custom solutions. I&apos;m excited to continue growing my expertise in technologies like JavaScript, React, SQL, and NoSQL, and contribute to innovative projects in a collaborative, agile environment.</p>
             <img id='profile-picture' src={profilePicture} alt='Mia at a Japanese temple posing next to a giant lantern'/>
           </div>
         </section>
