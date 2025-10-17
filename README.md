@@ -67,3 +67,7 @@ For future development on thie site specifically, I intend to make full use of R
 
 - [Color Palette](https://mycolor.space/?hex=%2367548C&sub=1) - theme colors
 - [Dog favicon](https://www.flaticon.com/free-icon/dog_1723750?term=dog&page=1&position=25&origin=tag&related_id=1723750)
+
+## Screenshots
+
+[Version 1, 2023](./public/assets/images/portfolio-v1.png)
