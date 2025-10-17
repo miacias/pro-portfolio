@@ -70,4 +70,4 @@ For future development on thie site specifically, I intend to make full use of R
 
 ## Screenshots
 
-[Version 1, 2023](./public/assets/images/portfolio-v1.png)
+![Version 1, 2023](./public/assets/images/portfolio-v1.png)
