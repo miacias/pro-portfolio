@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { altText } from "./utils/altText";
+import { altText } from "../utils/altText";
 
 const Project = ({ projectName, featured }) => {
   const [projectData, setProjectData] = useState(null);

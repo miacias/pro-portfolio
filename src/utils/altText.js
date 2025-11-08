@@ -14,6 +14,10 @@ const altText = (fileName) => {
       return "National Parks landing page showing search feature";
     case "weather-forecast":
       return "Weather Forecast homepage showcasing hometown weather and search feature.";
+    case "lees-cleaners":
+      return 'Lee\'s Cleaners homepage showcasing dry cleaning and laundry services.';
+    case "alternate-universes":
+      return "Alternate Universes LLC homepage showcasing headless WordPress application.";
   }
 };
 
